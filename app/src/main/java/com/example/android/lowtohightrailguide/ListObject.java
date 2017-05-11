@@ -2,21 +2,27 @@ package com.example.android.lowtohightrailguide;
 
 public class ListObject {
 
+    private static final double NO_MILE_PROVIDED = -1.1;
+    private double mMilePoint = NO_MILE_PROVIDED;
     private String mTitle;
-
     private String mDescription;
-
     private int mImageResourceId;
 
-    public ListObject(String title, String description, int imageResourceid) {
+    public ListObject(String title, double milePoint, String description, int imageResourceid) {
         mTitle = title;
+        mMilePoint = milePoint;
         mDescription = description;
         mImageResourceId = imageResourceid;
     }
 
-    public ListObject(String title, String description) {
+    public ListObject(String title, double milePoint, String description) {
         mTitle = title;
+        mMilePoint = milePoint;
         mDescription = description;
+    }
+
+    public ListObject(String title) {
+        mTitle = title;
     }
 
     public String getmDescription() {
@@ -31,6 +37,13 @@ public class ListObject {
         return mTitle;
     }
 
+    public boolean hasMile(){
+        return mMilePoint != NO_MILE_PROVIDED;
+    }
+
+    public double getmMilePoint() {
+        return mMilePoint;
+    }
     @Override
     public String toString() {
         return "ListObject{ "
@@ -39,4 +52,6 @@ public class ListObject {
                 + "\nmImageResourceId=" + mImageResourceId
                 + "}";
     }
+
+
 }

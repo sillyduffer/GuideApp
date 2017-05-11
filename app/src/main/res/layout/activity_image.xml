@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF3E0"
+    android:orientation="vertical"
     tools:context="com.example.android.lowtohightrailguide.ImageActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is the image view" />
-
-    <ImageView
-        android:id="@+id/act_image"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/details_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height"
+            android:background="@color/colorBackground"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="48sp"
+            tools:text="Title" />
+
+        <ImageView
+            android:id="@+id/act_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            tools:src="@drawable/darwincanyonsmall" />
+
+        <TextView
+            android:id="@+id/details_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="#0277BD"
+            android:textSize="16sp"
+            tools:text="A description of the given item; these can go on and on and on. Maybe they go on so long they don't fit on one line!" />
+
+
+    </LinearLayout>
+</ScrollView>

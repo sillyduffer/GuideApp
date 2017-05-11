@@ -24,10 +24,10 @@ public class StatsFragment extends Fragment {
 
         final ArrayList<ListObject> items = new ArrayList<>();
 
-        items.add(new ListObject("Starting Elevation", "-235'"));
-        items.add(new ListObject("Ending Elevation", "14,508'"));
-        items.add(new ListObject("Net Loss/Gain", "0000/33,000'"));
-        items.add(new ListObject("Length","165 miles"));
+        items.add(new ListObject("Starting Elevation: -235'"));
+        items.add(new ListObject("Ending Elevation: 14,508'"));
+        items.add(new ListObject("Net Loss/Gain: 0000/33,000'"));
+        items.add(new ListObject("Length: 165 miles"));
 
         LOAdapter itemsAdapter = new LOAdapter(getActivity(), items);
 

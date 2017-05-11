@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="resupply">Resupply</string>
+    <string name="hidden_treasures">Hidden Treasures</string>
+    <string name="stats">Trail Info</string>
+    <string name="water_sources">Water Sources</string>
 </resources>

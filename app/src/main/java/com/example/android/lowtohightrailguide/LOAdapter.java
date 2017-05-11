@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 public class LOAdapter extends ArrayAdapter<ListObject> {
 
-    private int mImageResourceId;
-
     public LOAdapter(Activity context, ArrayList<ListObject> ourWords) {
         super(context, 0, ourWords);
     }
@@ -32,17 +30,18 @@ public class LOAdapter extends ArrayAdapter<ListObject> {
 
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.list_title);
         titleTextView.setText(currentLO.getmTitle());
+        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.list_mile_point);
+        if (currentLO.hasMile()) {
+            descriptionTextView.setText("Mile " + currentLO.getmMilePoint());
+            descriptionTextView.setVisibility(View.VISIBLE);
+        }
+        else {
+            descriptionTextView.setVisibility(View.GONE);
+        }
 
-        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.list_description);
-        descriptionTextView.setText(currentLO.getmDescription());
 
-        mImageResourceId = currentLO.getmImageResourceId();
 
         return listItemView;
-    }
-
-    public int getmImageResourceId() {
-        return mImageResourceId;
     }
 
 }
