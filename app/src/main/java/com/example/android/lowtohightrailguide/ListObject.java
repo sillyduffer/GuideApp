@@ -6,7 +6,8 @@ public class ListObject {
     private double mMilePoint = NO_MILE_PROVIDED;
     private String mTitle;
     private String mDescription;
-    private int mImageResourceId;
+    private static final int NO_IMAGE_PROVIDED = -1;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     public ListObject(String title, double milePoint, String description, int imageResourceid) {
         mTitle = title;
@@ -39,6 +40,10 @@ public class ListObject {
 
     public boolean hasMile() {
         return mMilePoint != NO_MILE_PROVIDED;
+    }
+
+    public boolean hasImage(){
+        return (mImageResourceId != NO_IMAGE_PROVIDED);
     }
 
     public double getmMilePoint() {

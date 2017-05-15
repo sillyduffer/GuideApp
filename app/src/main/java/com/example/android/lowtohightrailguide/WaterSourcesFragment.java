@@ -30,26 +30,26 @@ public class WaterSourcesFragment extends Fragment {
 
         final ArrayList<ListObject> items = new ArrayList<>();
 
-        items.add(new ListObject("Badwater Basin Parking Lot", 0.0, "Bring some water in the car to fill your initial capacity. Initial food supply."));
-        items.add(new ListObject("Hanaupah Canyon Rd (Cache)", 6.4, "The first road after the salt flats.", R.drawable.hanipahcanyonsmall));
-        items.add(new ListObject("Hanaupah Spring", 15.5, "The first canyon has a spring, right before you climb to telescope ridge. Before you begin your trek, call the ranger station and check if the spring is flowing."));
-        items.add(new ListObject("Tuber Spring", 27, "The second spring is in Tuber canyon, after you drop of the ridge."));
-        items.add(new ListObject("Trona-Wildrose Rd (Cache)", 34, "Four Miles offroute."));
-        items.add(new ListObject("Wildrose Campground", 34, "Four miles offroute, reliable water."));
-        items.add(new ListObject("Panamint Springs", 50, "First trail town, great burgers, spot to camp. Cache food here, there is very limited food to buy at the store. Reliable water."));
-        items.add(new ListObject("Darwin Falls", 55, "Soon after Paradise Cafe this is lovely spring water.", R.drawable.darwincanyonsmall));
-        items.add(new ListObject("China Garden Spring", 56, "Abandoned shack, a small pool with goldfish! Water tastes very fishy, drink at your own risk.", R.drawable.chinaspringssmall));
-        items.add(new ListObject("Highway 190 (Cache)", 62, "Crossing the highway at Saline Valley Rd; leave some water here on your way to the start."));
-        items.add(new ListObject("Cerro Gordo ghost town (cache)", 87, "Abandoned mining town, very cool! Sometimes the owner will be there giving a tour, if so there you can ask for water. Caching water here is possible if vehicle can make it up the road.", R.drawable.cerrogordosmall));
-        items.add(new ListObject("Mexican Spring", 92, "Possible spring depending on snow melt."));
-        items.add(new ListObject("Long John Canyon Spring", 102, "Very unreliable spring, often hard to get to. Can be hard to find in the slot canyons."));
-        items.add(new ListObject("Owenyo-Lone Pine Rd (Cache)", 106, "Long dirt road, possible cache site. Road is possible for most vehicles"));
-        items.add(new ListObject("Owens River", 107, "Large river, not the cleanest."));
-        items.add(new ListObject("Lone Pine", 110, "Real town, lots of water and food. There is a nice man at the gear shop who may let you cache gear here if you ask before hand."));
-        items.add(new ListObject("Lone Pine Campground", 117, "Small campground outside of town. Reliable spigots and bathrooms."));
-        items.add(new ListObject("Lone Pine Creek", 119, "Nice little creek on the Whitney portal trail."));
-        items.add(new ListObject("Whitney Portal", 121, "Busy Campground, lots of fresh water and a small store."));
-        items.add(new ListObject("Creek and Lakes", 126, "Many a lake on the climb to whitney, for both the mountaineers route and main Mt. Whiney trail."));
+        items.add(new ListObject(getString(R.string.b_basin_lot_title), 0.0, getString(R.string.b_basin_lot_description)));
+        items.add(new ListObject(getString(R.string.h_c_road_title), 6.4, getString(R.string.h_c_road_description), R.drawable.hanipahcanyonsmall));
+        items.add(new ListObject(getString(R.string.h_spring_title), 15.5, getString(R.string.h_spring_description)));
+        items.add(new ListObject(getString(R.string.t_spring_title), 27, getString(R.string.t_spring_description)));
+        items.add(new ListObject(getString(R.string.t_w_road_title), 34, getString(R.string.t_w_road_description)));
+        items.add(new ListObject(getString(R.string.w_campground_title), 34, getString(R.string.w_campground_description)));
+        items.add(new ListObject(getString(R.string.p_springs_title), 50, getString(R.string.p_springs_description)));
+        items.add(new ListObject(getString(R.string.d_falls_title), 54, getString(R.string.d_falls_description), R.drawable.darwincanyonsmall));
+        items.add(new ListObject(getString(R.string.c_g_springs_title), 55, getString(R.string.c_g_springs_description), R.drawable.chinaspringssmall));
+        items.add(new ListObject(getString(R.string.h_190_title), 62, getString(R.string.h_190_description)));
+        items.add(new ListObject(getString(R.string.ghost_town_title), 87, getString(R.string.ghost_town_description), R.drawable.cerrogordosmall));
+        items.add(new ListObject(getString(R.string.m_spring_title), 92, getString(R.string.m_spring_description)));
+        items.add(new ListObject(getString(R.string.l_j_c_spring_title), 102, getString(R.string.l_j_c_spring_description)));
+        items.add(new ListObject(getString(R.string.o_l_p_road_title), 106, getString(R.string.o_l_p_road_description)));
+        items.add(new ListObject(getString(R.string.o_river_title), 107, getString(R.string.o_river_description)));
+        items.add(new ListObject(getString(R.string.l_pine_title), 110, getString(R.string.l_pine_description)));
+        items.add(new ListObject(getString(R.string.l_p_campground_title), 117, getString(R.string.l_p_campground_description)));
+        items.add(new ListObject(getString(R.string.l_p_creek_title), 119, getString(R.string.l_p_creek_description)));
+        items.add(new ListObject(getString(R.string.w_portal_title), 121, getString(R.string.w_portal_description)));
+        items.add(new ListObject(getString(R.string.c_l_title), 126, getString(R.string.c_l_description)));
 
         LOAdapter itemsAdapter = new LOAdapter(getActivity(), items);
 
@@ -61,10 +61,10 @@ public class WaterSourcesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getActivity(), DetailPageActivity.class);
-                Log.i(TAG, "onItemClick: " + i);
-                i.putExtra("extraImage", items.get(position).getmImageResourceId());
+                Log.i(TAG, getString(R.string.on_item_click) + i);
+                i.putExtra(getString(R.string.extra_image), items.get(position).getmImageResourceId());
                 i.putExtra(Intent.EXTRA_TEXT, items.get(position).getmDescription());
-                i.putExtra("extraTitle", items.get(position).getmTitle());
+                i.putExtra(getString(R.string.extra_title), items.get(position).getmTitle());
                 startActivity(i);
             }
         });

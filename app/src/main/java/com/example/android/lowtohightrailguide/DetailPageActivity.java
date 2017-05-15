@@ -14,11 +14,11 @@ public class DetailPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_page);
 
-        int id = getIntent().getIntExtra("extraImage", 0);
+        int id = getIntent().getIntExtra(getString(R.string.extra_image), -1);
 
         ImageView imageView = (ImageView) findViewById(R.id.act_image);
 
-        if (id != 0) {
+        if (id != -1) {
             imageView.setImageResource(id);
             imageView.setVisibility(View.VISIBLE);
         } else {
@@ -31,7 +31,7 @@ public class DetailPageActivity extends AppCompatActivity {
 
         descriptionView.setText(description);
 
-        String title = getIntent().getStringExtra("extraTitle");
+        String title = getIntent().getStringExtra(getString(R.string.detail_title));
 
         TextView titleView = (TextView) findViewById(R.id.details_title);
 

@@ -27,10 +27,10 @@ public class ResupplyFragment extends Fragment {
 
         final ArrayList<ListObject> items = new ArrayList<>();
 
-        items.add(new ListObject("Badwater Basin Parking Lot", 0.0, "Bring some water in the car to fill your initial capacity. Initial food supply."));
-        items.add(new ListObject("Panamint Springs", 50, "First trail town, great burgers, spot to camp. Cache food here, there is very limited food to buy at the store. Reliable water."));
-        items.add(new ListObject("Lone Pine", 110, "Real town, lots of water and food. There is a nice man at the gear shop who may let you cache gear here if you ask before hand."));
-        items.add(new ListObject("Whitney Portal", 121, "Busy Campground, lots of fresh water and a small store."));
+        items.add(new ListObject(getString(R.string.b_basin_lot_title), 0.0, getString(R.string.b_basin_lot_description)));
+        items.add(new ListObject(getString(R.string.p_springs_title), 50, getString(R.string.p_springs_description)));
+        items.add(new ListObject(getString(R.string.l_pine_title), 110, getString(R.string.l_pine_description)));
+        items.add(new ListObject(getString(R.string.w_portal_title), 121, getString(R.string.w_portal_description)));
 
         LOAdapter itemsAdapter = new LOAdapter(getActivity(), items);
 
@@ -42,10 +42,10 @@ public class ResupplyFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getActivity(), DetailPageActivity.class);
-                Log.i(TAG, "onItemClick: " + i);
-                i.putExtra("extraImage", items.get(position).getmImageResourceId());
+                Log.i(TAG, getString(R.string.on_item_click) + i);
+                i.putExtra(getString(R.string.extra_image), items.get(position).getmImageResourceId());
                 i.putExtra(Intent.EXTRA_TEXT, items.get(position).getmDescription());
-                i.putExtra("extraTitle", items.get(position).getmTitle());
+                i.putExtra(getString(R.string.extra_title), items.get(position).getmTitle());
                 startActivity(i);
             }
         });

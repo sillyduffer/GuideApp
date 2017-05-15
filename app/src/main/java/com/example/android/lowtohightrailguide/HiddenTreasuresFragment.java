@@ -28,14 +28,14 @@ public class HiddenTreasuresFragment extends Fragment {
 
         final ArrayList<ListObject> items = new ArrayList<>();
 
-        items.add(new ListObject("Salt Flats", 3, "Large expanse of salty basin floor, lowest point, sometimes rough terrain.", R.drawable.saltflatssmall));
-        items.add(new ListObject("Hanaupah Canyon", 15.5, "Lovely Spring", R.drawable.hanipahcanyonsmall));
-        items.add(new ListObject("Telescope Peak", 20, "11,00' peak with a beautiful view, one hell of a climb to get there.", R.drawable.telescoperidgesmall));
-        items.add(new ListObject("Darwin Falls", 54, "A beautiful hidden treasure right of the road, a bit of a scramble out.", R.drawable.darwincanyonsmall));
-        items.add(new ListObject("China Garden Springs", 55, "Abandoned shack, a small pool with goldfish! Water tastes very fishy, drink at your own risk.", R.drawable.chinaspringssmall));
-        items.add(new ListObject("Cerro Gordo ghost town", 87, "Abandoned mining town, very cool! Sometimes the owner will be there giving a tour, if so there you can ask for water. Caching water here is possible if vehicle can make it up the road.", R.drawable.cerrogordosmall));
-        items.add(new ListObject("Long John Canyon", 99, "tricky decent from the Inyo Mountains, pick your route carefully."));
-        items.add(new ListObject("Mt.Whitney Summit", 130, "Summit of Mt Whitney (14,505'), southern terminus of the John Muir Trail (western terminus of L2H).", R.drawable.whitneysumitsmall));
+        items.add(new ListObject(getString(R.string.salt_flats_title), 3, getString(R.string.salt_fats_description), R.drawable.saltflatssmall));
+        items.add(new ListObject(getString(R.string.h_canyon_title), 15.5, getString(R.string.h_canyon_description), R.drawable.hanipahcanyonsmall));
+        items.add(new ListObject(getString(R.string.t_peak_title), 20, getString(R.string.t_peak_description), R.drawable.telescoperidgesmall));
+        items.add(new ListObject(getString(R.string.d_falls_title), 54, getString(R.string.d_falls_description), R.drawable.darwincanyonsmall));
+        items.add(new ListObject(getString(R.string.c_g_springs_title), 55, getString(R.string.c_g_springs_description), R.drawable.chinaspringssmall));
+        items.add(new ListObject(getString(R.string.ghost_town_title), 87, getString(R.string.ghost_town_description), R.drawable.cerrogordosmall));
+        items.add(new ListObject(getString(R.string.l_j_canyon_title), 99, getString(R.string.l_j_canyon_description)));
+        items.add(new ListObject(getString(R.string.m_whitney_sum_title), 130, getString(R.string.m_whitney_description), R.drawable.whitneysumitsmall));
 
         final LOAdapter itemsAdapter = new LOAdapter(getActivity(), items);
 
@@ -47,10 +47,10 @@ public class HiddenTreasuresFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getActivity(), DetailPageActivity.class);
-                Log.i(TAG, "onItemClick: " + i);
-                i.putExtra("extraImage", items.get(position).getmImageResourceId());
+                Log.i(TAG, getString(R.string.on_item_click) + i);
+                i.putExtra(getString(R.string.extra_image), items.get(position).getmImageResourceId());
                 i.putExtra(Intent.EXTRA_TEXT, items.get(position).getmDescription());
-                i.putExtra("extraTitle", items.get(position).getmTitle());
+                i.putExtra(getString(R.string.extra_title), items.get(position).getmTitle());
                 startActivity(i);
             }
         });
