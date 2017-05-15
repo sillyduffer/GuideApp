@@ -41,10 +41,10 @@ public class ResupplyFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getActivity(), ImageActivity.class);
+                Intent i = new Intent(getActivity(), DetailPageActivity.class);
                 Log.i(TAG, "onItemClick: " + i);
                 i.putExtra("extraImage", items.get(position).getmImageResourceId());
-                i.putExtra(Intent.EXTRA_TEXT,items.get(position).getmDescription());
+                i.putExtra(Intent.EXTRA_TEXT, items.get(position).getmDescription());
                 i.putExtra("extraTitle", items.get(position).getmTitle());
                 startActivity(i);
             }

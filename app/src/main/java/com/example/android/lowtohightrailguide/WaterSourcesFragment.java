@@ -31,16 +31,16 @@ public class WaterSourcesFragment extends Fragment {
         final ArrayList<ListObject> items = new ArrayList<>();
 
         items.add(new ListObject("Badwater Basin Parking Lot", 0.0, "Bring some water in the car to fill your initial capacity. Initial food supply."));
-        items.add(new ListObject("Hanaupah Canyon Rd (Cache)", 6.4, "The first road after the salt flats.", R.drawable.hanipahcanyon));
-        items.add(new ListObject("Hanaupah Spring", 15.5,"The first canyon has a spring, right before you climb to telescope ridge. Before you begin your trek, call the ranger station and check if the spring is flowing."));
+        items.add(new ListObject("Hanaupah Canyon Rd (Cache)", 6.4, "The first road after the salt flats.", R.drawable.hanipahcanyonsmall));
+        items.add(new ListObject("Hanaupah Spring", 15.5, "The first canyon has a spring, right before you climb to telescope ridge. Before you begin your trek, call the ranger station and check if the spring is flowing."));
         items.add(new ListObject("Tuber Spring", 27, "The second spring is in Tuber canyon, after you drop of the ridge."));
         items.add(new ListObject("Trona-Wildrose Rd (Cache)", 34, "Four Miles offroute."));
         items.add(new ListObject("Wildrose Campground", 34, "Four miles offroute, reliable water."));
         items.add(new ListObject("Panamint Springs", 50, "First trail town, great burgers, spot to camp. Cache food here, there is very limited food to buy at the store. Reliable water."));
-        items.add(new ListObject("Darwin Falls", 55, "Soon after Paradise Cafe this is lovely spring water.", R.drawable.darwincanyon));
-        items.add(new ListObject("China Garden Spring", 56, "Abandoned shack, a small pool with goldfish! Water tastes very fishy, drink at your own risk.", R.drawable.chinasprings));
+        items.add(new ListObject("Darwin Falls", 55, "Soon after Paradise Cafe this is lovely spring water.", R.drawable.darwincanyonsmall));
+        items.add(new ListObject("China Garden Spring", 56, "Abandoned shack, a small pool with goldfish! Water tastes very fishy, drink at your own risk.", R.drawable.chinaspringssmall));
         items.add(new ListObject("Highway 190 (Cache)", 62, "Crossing the highway at Saline Valley Rd; leave some water here on your way to the start."));
-        items.add(new ListObject("Cerro Gordo ghost town (cache)", 87, "Abandoned mining town, very cool! Sometimes the owner will be there giving a tour, if so there you can ask for water. Caching water here is possible if vehicle can make it up the road.", R.drawable.cerrogordo));
+        items.add(new ListObject("Cerro Gordo ghost town (cache)", 87, "Abandoned mining town, very cool! Sometimes the owner will be there giving a tour, if so there you can ask for water. Caching water here is possible if vehicle can make it up the road.", R.drawable.cerrogordosmall));
         items.add(new ListObject("Mexican Spring", 92, "Possible spring depending on snow melt."));
         items.add(new ListObject("Long John Canyon Spring", 102, "Very unreliable spring, often hard to get to. Can be hard to find in the slot canyons."));
         items.add(new ListObject("Owenyo-Lone Pine Rd (Cache)", 106, "Long dirt road, possible cache site. Road is possible for most vehicles"));
@@ -60,10 +60,10 @@ public class WaterSourcesFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getActivity(), ImageActivity.class);
+                Intent i = new Intent(getActivity(), DetailPageActivity.class);
                 Log.i(TAG, "onItemClick: " + i);
                 i.putExtra("extraImage", items.get(position).getmImageResourceId());
-                i.putExtra(Intent.EXTRA_TEXT,items.get(position).getmDescription());
+                i.putExtra(Intent.EXTRA_TEXT, items.get(position).getmDescription());
                 i.putExtra("extraTitle", items.get(position).getmTitle());
                 startActivity(i);
             }

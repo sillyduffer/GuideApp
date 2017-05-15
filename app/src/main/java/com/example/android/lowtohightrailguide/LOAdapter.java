@@ -34,11 +34,9 @@ public class LOAdapter extends ArrayAdapter<ListObject> {
         if (currentLO.hasMile()) {
             descriptionTextView.setText("Mile " + currentLO.getmMilePoint());
             descriptionTextView.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             descriptionTextView.setVisibility(View.GONE);
         }
-
 
 
         return listItemView;

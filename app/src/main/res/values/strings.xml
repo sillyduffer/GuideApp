@@ -7,4 +7,5 @@
     <string name="hidden_treasures">Hidden Treasures</string>
     <string name="stats">Trail Info</string>
     <string name="water_sources">Water Sources</string>
+    <string name="image_content_description">Image from listObject, if applicable</string>
 </resources>

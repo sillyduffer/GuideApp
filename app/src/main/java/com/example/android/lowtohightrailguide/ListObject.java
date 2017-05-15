@@ -37,13 +37,14 @@ public class ListObject {
         return mTitle;
     }
 
-    public boolean hasMile(){
+    public boolean hasMile() {
         return mMilePoint != NO_MILE_PROVIDED;
     }
 
     public double getmMilePoint() {
         return mMilePoint;
     }
+
     @Override
     public String toString() {
         return "ListObject{ "

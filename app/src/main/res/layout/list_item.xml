@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal">
 
     <TextView
-        android:paddingLeft="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="16dp"
         android:id="@+id/list_title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_weight="3"
+        android:gravity="center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
-        android:gravity="center_vertical"
-        android:layout_width="0dp"
-        android:layout_weight="3"
-        android:layout_height="@dimen/list_item_height"
-        tools:text="Hanaupah Canyon Rd (Cache)"/>
+        tools:text="Hanaupah Canyon Rd (Cache)" />
 
     <TextView
-        android:padding="16dp"
         android:id="@+id/list_mile_point"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center"
+        android:padding="16dp"
         android:textColor="#0277BD"
         android:textSize="12sp"
         tools:text="Mile: 100" />

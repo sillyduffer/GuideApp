@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ImageActivity"
+        <activity android:name=".DetailPageActivity"
             android:parentActivityName="com.example.android.lowtohightrailguide.MainActivity"
             tools:targetApi="jelly_bean">
             <!-- Parent activity meta-data to support 4.0 and lower -->
